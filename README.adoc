@@ -2,7 +2,7 @@ image::/resources/icon.png[API Docs, 300, 300]
 = Discord Dungeons API Wrappers
 [cols="2*a", options="header"]
 |===
-|Status
+|•
 |Name
 
 a|image::/resources/b1.png[Working On]
