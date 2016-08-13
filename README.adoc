@@ -1,4 +1,4 @@
-image::image.jpeg[API Docs, 300, 300]
+image::/resources/icon.png[API Docs, 300, 300]
 = Discord Dungeons API Wrappers
 [cols="2*a", options="header"]
 |===
@@ -6,15 +6,15 @@ image::image.jpeg[API Docs, 300, 300]
 |Name
 
 |In Progress
-a|link:https://github.com/DiscordDungeons/api/tree/ruby[Ruby]
+a|image::/resources/b1.png[] link:https://github.com/DiscordDungeons/api/tree/ruby[Ruby]
 
 |Planned
-|Node
+a|image::/resources/b0.png[] Node
 
 |Planned
-|Python
+a|image::/resources/b0.png[] Python
 
 |Planned
-|Lua
+a|image::/resources/b0.png[] Lua
 
 |===
