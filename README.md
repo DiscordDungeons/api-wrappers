@@ -1,5 +1,6 @@
 [![Gem Version](https://img.shields.io/gem/v/dd-api.svg)]()
-[![Gem Downloads](https://img.shields.io/gem/dt/dd-api.svg)]() [![Travis](https://img.shields.io/travis/DiscordDungeons/api-rb/master.svg)]()
+[![Gem Downloads](https://img.shields.io/gem/dt/dd-api.svg)]()
+[![Travis](https://img.shields.io/travis/DiscordDungeons/api-rb/master.svg)]()
 [![Join Discord](https://img.shields.io/badge/discord-join-7289DA.svg)](http://discord.discorddungeons.me)
 -----
 ### A wrapper gem to the [Discord Dungeons API](http://api.discorddungeons.me/docs)
