@@ -6,31 +6,31 @@
 ### A wrapper gem to the [Discord Dungeons API](http://api.discorddungeons.me/docs)
 To start, make a new module using your [API Key and User Agent.](http://api.discorddungeons.me/docs#api-key)
 ```ruby
-api = DDAPI.new('api-key', 'user-agent')
+app = DDAPI::app.new('api-key', 'user-agent')
 ```
 You can search for users, items, guild items and guilds.
 ```ruby
-api.find_user('Kurosaki')
-api.find_item('Salt')
-api.find_guild_item('Guild Tag')
-api.find_guild('Discord Dungeons')
+app.find_user('Kurosaki')
+app.find_item('Salt')
+app.find_guild_item('Guild Tag')
+app.find_guild('Discord Dungeons')
 ```
 You can also use IDs to get various things.
 ```ruby
-api.get_user('user_id')
-api.get_item(93)
-api.get_guild_item(4)
-api.get_guild('f-c-d-e')
-api.get_mob(8)
+app.user('user_id')
+app.item(93)
+app.guild_item(4)
+app.guild('f-c-d-e')
+app.mob(8)
 ```
 
 And also, you can get a array of all items, guild items, and users.
 ```ruby
-api.users
-api.items
-api.guild_items
-api.guilds
-api.mobs
+app.users
+app.items
+app.guild_items
+app.guilds
+app.mobs
 ```
 
 For support, [visit the discord server](http://discord.discorddungeons.me)
