@@ -1,4 +1,3 @@
-![DD API](https://raw.githubusercontent.com/DiscordDungeons/api-rb/master/image.jpeg)
 [![Gem Version](https://img.shields.io/gem/v/dd-api.svg)]()
 [![Gem Downloads](https://img.shields.io/gem/dt/dd-api.svg)]() [![Travis](https://img.shields.io/travis/DiscordDungeons/api-rb/master.svg)]()
 [![Join Discord](https://img.shields.io/badge/discord-join-7289DA.svg)](http://discord.discorddungeons.me)
