@@ -1,5 +1,8 @@
-image::/resources/icon.png[API Docs, 300, 300]
+image::/resources/icon.png[API Docs, 100, 100]
 = Discord Dungeons API Wrappers
+link:#languages[Languages] | link:#contributing[Contributing]
+
+== Languages
 [cols="2*a", options="header"]
 |===
 |•
@@ -7,6 +10,9 @@ image::/resources/icon.png[API Docs, 300, 300]
 
 a|image::/resources/b1.png[Working On]
 a|link:https://github.com/DiscordDungeons/api/tree/ruby[Ruby]
+
+a|image::/resources/b1.png[Working On]
+a|link:https://github.com/DiscordDungeons/api/tree/php[PHP]
 
 a|image::/resources/b0.png[Planned]
 |Node
@@ -18,3 +24,8 @@ a|image::/resources/b0.png[Planned]
 |Lua
 
 |===
+
+== Contributing
+If you do want to contribute to improving a wrapper, Please use this format
+Title: `Summary of PR` (`Coding Language`)
+Description: `List of Improvements, optional if title says it all`
