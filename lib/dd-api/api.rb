@@ -1,6 +1,6 @@
 require 'rest-client'
 
-require './dd-api/errors.rb'
+require 'dd-api/errors'
 
 # List of methods representing endpoints in Discord Dungeons's API
 module DDAPI::API

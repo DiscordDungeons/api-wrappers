@@ -1,8 +1,8 @@
 require 'json'
 require 'htmlentities'
 
-require './dd-api/api.rb'
-require './dd-api/init.rb'
+require 'dd-api/api'
+require 'dd-api/init'
 
 # Objects essential to DRPG
 module DDAPI

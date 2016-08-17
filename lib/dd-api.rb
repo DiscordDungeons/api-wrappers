@@ -1,7 +1,7 @@
-require './dd-api/classes.rb'
-require './dd-api/init.rb'
-require './dd-api/api.rb'
-require './dd-api/version.rb'
-require './dd-api/errors.rb'
+require 'dd-api/classes'
+require 'dd-api/init'
+require 'dd-api/api'
+require 'dd-api/version'
+require 'dd-api/errors'
 module DDAPI
 end

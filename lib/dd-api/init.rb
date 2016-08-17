@@ -1,7 +1,7 @@
 require 'rest-client'
 
-require './dd-api/api.rb'
-require './dd-api/classes.rb'
+require 'dd-api/api'
+require 'dd-api/classes'
 
 module DDAPI
   # Initializer Module
