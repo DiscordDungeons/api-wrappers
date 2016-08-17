@@ -26,6 +26,6 @@ a|image::/resources/b0.png[Planned]
 |===
 
 == Contributing
-If you do want to contribute to improving a wrapper, Please use this format
-Title: `Summary of PR` (`Coding Language`)
+If you do want to contribute to improving a wrapper, Please use this format: +
+Title: `Summary of PR` (`Coding Language`) +
 Description: `List of Improvements, optional if title says it all`
