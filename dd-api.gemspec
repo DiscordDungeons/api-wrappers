@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['snazzah@discorddungeons.me']
   gem.summary       = %q{Wrapper gem of Discord Dungeons API.}
   gem.description   = %q{Wrapper gem of Discord Dungeons API.}
-  gem.homepage      = 'http://discorddungeons.me'
+  gem.homepage      = 'http://api.discorddungeons.me/docs/'
   gem.license       = 'MIT'
 
   gem.require_paths = ['lib']

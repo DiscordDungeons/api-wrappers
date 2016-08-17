@@ -19,4 +19,12 @@ module DDAPI::API
   def get_guild(app, id)
     get('guild/'+id, app)['data']
   end
+
+  def all_guilds(app)
+    get('all/guilds', app)['data']
+  end
+
+  def all_users(app)
+    get('all/users', app)['data']
+  end
 end
