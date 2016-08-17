@@ -3,8 +3,8 @@
 [![Travis](https://img.shields.io/travis/DiscordDungeons/api-rb/master.svg)]()
 [![Join Discord](https://img.shields.io/badge/discord-join-7289DA.svg)](http://discord.discorddungeons.me)
 -----
-### A wrapper gem to the [Discord Dungeons API](http://api.discorddungeons.me/docs)
-To start, make a new module using your [API Key and User Agent.](http://api.discorddungeons.me/docs#api-key)
+### A wrapper gem to the [Discord Dungeons API](http://api.discorddungeons.me/docs/)
+To start, make a new module using your [API Key and User Agent.](http://api.discorddungeons.me/developers)
 ```ruby
 app = DDAPI::app.new('api-key', 'user-agent')
 ```
