@@ -47,7 +47,6 @@ module DDAPI
 
     # @return [Integer] The level at that time, of the user.
     attr_accessor :level
-    alias_method :lvl, :level
 
     # @return [Integer] How much maximun health that user has
     attr_accessor :max_hp
@@ -104,30 +103,63 @@ module DDAPI
     attr_accessor :description
     alias_method :desc, :description
 
+    # @return [true, false] Whether the guild is open.
+    attr_accessor :open
+
     # @return [Integer] The amount gold in the guild.
     attr_accessor :gold
 
+    # @return [Integer] The combined deaths by the guild members.
+    attr_accessor :deaths
+    alias_method :frags, :deaths
+
+    # @return [Integer] The combined enemies slain by the guild members.
+    attr_accessor :kills
+    alias_method :slain, :kills
+
+    # @return [Integer] The maximum amount of people that can be in the guild.
+    attr_accessor :max
+
     # @return [Integer] The level of the guild.
     attr_accessor :level
-    alias_method :lvl, :level
 
     # @return [Integer] The ID of the guild.
     attr_accessor :id
 
-    # @return [true, false] The icon of the guild.
+    # @return [Integer] The level requirement of the guild.
+    attr_accessor :level_requirement
+
+    # @return [String] The icon of the guild.
     attr_accessor :icon
+
+    # @return [Array<String>] Array of icons the guild has bought.
+    attr_accessor :icons
+
+    # @return [String, nil] The Discord Role ID of the guild. `nil` if there is no role.
+    attr_accessor :role
+
+    # @return [String, nil] The Discord Channel ID of the guild. `nil` if there is no channel.
+    attr_accessor :channel
 
     def initialize(data, app)
       @data = data
       @gdata = data['guild']
       @name = data['name']
+      @open = data['open']
       @level = gdata['level']
       @description = gdata['desc']
       @gold = gdata['gold']
+      @kills = @data['slain']
+      @deaths = @data['deaths']
       @icon = HTMLEntities.new.decode(gdata['icon'])
+      @icons = gdata['icons'].map {|icon| HTMLEntities.new.decode(icon) }
       @id = data['id']
       @members = gdata['members']
+      @level_requirement = gdata['levelreq']
+      @max = gdata['max']
       @owner = @app.user(gdata['owner'])
+      @role = gdata['role'].empty? ? nil : gdata['role']
+      @channel = gdata['channel'].empty? ? nil : gdata['channel']
       @app = app
     end
 
@@ -162,7 +194,6 @@ module DDAPI
 
     # @return [Integer] The level of the item.
     attr_accessor :level
-    alias_method :lvl, :level
 
     # @return [Integer] The ID of the item.
     # attr_accessor :id
@@ -199,7 +230,7 @@ module DDAPI
     end
   end
   # Represents a DRPG guild item.
-  class Item
+  class GuildItem
     # @return [String] The name of the item.
     attr_accessor :name
 
@@ -221,7 +252,6 @@ module DDAPI
 
     # @return [Integer] The level of the item.
     attr_accessor :level
-    alias_method :lvl, :level
 
     # @return [Integer] The ID of the item.
     # attr_accessor :id
@@ -241,7 +271,7 @@ module DDAPI
 
     # The inspect method is overwritten to give more useful output
     def inspect
-      "#<DDAPI::Item name=#{@name} id=#{@id} level=#{@level}>"
+      "#<DDAPI::GuildItem name=#{@name} id=#{@id} level=#{@level}>"
     end
   end
 end
