@@ -6,6 +6,7 @@ require 'dd-api/init'
 
 # Objects essential to DRPG
 module DDAPI
+  # A Class that is bundled with an API key and a User Agent. Base of gem.
   class App
     # @return [String] The api key of the instance.
     attr_accessor :api_key
@@ -20,6 +21,7 @@ module DDAPI
         @user_agent = user_agent
     end
   end
+  # Represents a DRPG user.
   class User
     # @return [Srting] The name of the user.
     attr_accessor :name
@@ -89,6 +91,7 @@ module DDAPI
       "#<DDAPI::User name=#{@name} id=#{@id} level=#{@level}>"
     end
   end
+  # Represents a DRPG guild.
   class Guild
     # @return [String] The name of the guild.
     attr_accessor :name
@@ -104,11 +107,11 @@ module DDAPI
     # @return [Integer] The amount gold in the guild.
     attr_accessor :gold
 
-    # @return [Integer] The level at that time, of the guild.
+    # @return [Integer] The level of the guild.
     attr_accessor :level
     alias_method :lvl, :level
 
-    # @return [Integer] The ID of the user.
+    # @return [Integer] The ID of the guild.
     attr_accessor :id
 
     # @return [true, false] The icon of the guild.
@@ -116,20 +119,129 @@ module DDAPI
 
     def initialize(data, app)
       @data = data
+      @gdata = data['guild']
       @name = data['name']
-      @level = data['level']
-      @description = data['desc']
-      @gold = data['gold']
-      @icon = HTMLEntities.new.decode(data['icon'])
+      @level = gdata['level']
+      @description = gdata['desc']
+      @gold = gdata['gold']
+      @icon = HTMLEntities.new.decode(gdata['icon'])
       @id = data['id']
-      @members = data['members']
-      @owner = @app.user(data['owner'])
+      @members = gdata['members']
+      @owner = @app.user(gdata['owner'])
       @app = app
     end
 
     # The inspect method is overwritten to give more useful output
     def inspect
       "#<DDAPI::Guild name=#{@name} id=#{@id} level=#{@level}>"
+    end
+  end
+  # Represents a DRPG item.
+  class Item
+    # @return [String] The name of the item.
+    attr_accessor :name
+
+    # @return [Integer, nil] The cost of the item. `nil` if not buyable.
+    attr_accessor :sell_price
+
+    # @return [String] The prefix name of the item.
+    attr_accessor :prefix
+
+    # @return [String] The plural name of the item.
+    attr_accessor :plural
+
+    # @return [String] The type of the item.
+    attr_accessor :type
+
+    # @return [String] The description of the item.
+    attr_accessor :description
+    alias_method :desc, :description
+
+    # @return [String] The image URL to the item.
+    attr_accessor :image
+
+    # @return [Integer] The level of the item.
+    attr_accessor :level
+    alias_method :lvl, :level
+
+    # @return [Integer] The ID of the item.
+    # attr_accessor :id
+
+    # @return [true, false] Whether the item is sellable.
+    attr_accessor :sellable
+
+    # @return [Integer, nil] The sell price of the item. `nil` if not sellable.
+    attr_accessor :sell_price
+
+    # @return [true, false] Whether the item is tradeable.
+    attr_accessor :tradeable
+
+    def initialize(data, app)
+      @data = data
+      @name = data['name']
+      @level = data['level']
+      @description = data['desc']
+      @type = data['type']
+      @image = API.image_url(data['image'])
+      #@id = data['id']
+      @prefix = data['prefix']
+      @prefix = data['plural']
+      @sellable = data['sellable']
+      @tradeable = data['tradeable']
+      @sell_price = data['sell'] == -1 ? nil : data['sell']
+      @cost = data['cost'] == -1 ? nil : data['cost']
+      @app = app
+    end
+
+    # The inspect method is overwritten to give more useful output
+    def inspect
+      "#<DDAPI::Item name=#{@name} id=#{@id} level=#{@level}>"
+    end
+  end
+  # Represents a DRPG guild item.
+  class Item
+    # @return [String] The name of the item.
+    attr_accessor :name
+
+    # @return [Integer, nil] The cost of the item. `nil` if not buyable.
+    attr_accessor :sell_price
+
+    # @return [String] The prefix name of the item.
+    attr_accessor :prefix
+
+    # @return [String] The plural name of the item.
+    attr_accessor :plural
+
+    # @return [String] The description of the item.
+    attr_accessor :description
+    alias_method :desc, :description
+
+    # @return [String] The image URL to the item.
+    attr_accessor :image
+
+    # @return [Integer] The level of the item.
+    attr_accessor :level
+    alias_method :lvl, :level
+
+    # @return [Integer] The ID of the item.
+    # attr_accessor :id
+
+    def initialize(data, app)
+      @data = data
+      @name = data['name']
+      @level = data['level']
+      @description = data['desc']
+      @image = API.image_url(data['image'])
+      #@id = data['id']
+      @prefix = data['prefix']
+      @prefix = data['plural']
+      @cost = data['cost'] == -1 ? nil : data['cost']
+      @app = app
+    end
+
+    # The inspect method is overwritten to give more useful output
+    def inspect
+      "#<DDAPI::Item name=#{@name} id=#{@id} level=#{@level}>"
     end
   end
 end
