@@ -6,15 +6,15 @@ require 'dd-api/errors'
 module DDAPI::API
   # Make an item image URL from the item image
   def item_url(image)
-    "https://res.discorddungeons.me/images/#{image}"
+    "https://res.discorddungeons.me/images/"+image
   end
 
   def rget(endpoint, api_key, user_agent)
-    JSON.parse(RestClient.get("http://api.discorddungeons.me/#{endpoint}", :'X-Api-Key' => api_key, :'User-Agent' => user_agent))
+    JSON.parse(RestClient.get("http://api.discorddungeons.me/"+endpoint, :'X-Api-Key' => api_key, :'User-Agent' => user_agent))
   end
 
   def get(endpoint, app)
-    JSON.parse(RestClient.get("http://api.discorddungeons.me/#{endpoint}", :'X-Api-Key' => app.api_key, :'User-Agent' => app.user_agent))
+    JSON.parse(RestClient.get("http://api.discorddungeons.me/"+endpoint, :'X-Api-Key' => app.api_key, :'User-Agent' => app.user_agent))
   end
 
   def get_user(app, id)
