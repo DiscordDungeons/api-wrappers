@@ -142,7 +142,7 @@ module DDAPI
 
     def initialize(data, app)
       @data = data
-      @gdata = data['guild']
+      gdata = data['guild']
       @name = data['name']
       @open = data['open']
       @level = gdata['level']
