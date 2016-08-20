@@ -1,10 +1,12 @@
 [![Gem Version](https://img.shields.io/gem/v/dd-api.svg)]()
 [![Gem Downloads](https://img.shields.io/gem/dt/dd-api.svg)]()
+[![Inline Docs](http://inch-ci.org/github/DiscordDungeons/api.svg?branch=ruby)]() 
 [![Travis](https://img.shields.io/travis/DiscordDungeons/api-rb/master.svg)]()
 [![Join Discord](https://img.shields.io/badge/discord-join-7289DA.svg)](http://discord.discorddungeons.me)
 -----
 ### A wrapper gem to the [Discord Dungeons API](http://api.discorddungeons.me/docs/)
-# ToDo
+
+###### ToDo
  - [ ] Search
    - [ ] User
    - [ ] Item
@@ -23,9 +25,11 @@
  - [ ] Misc.
    - [ ] Top __ users in ___
    - [ ] Crafts
+
+## Intro
 To start, make a new module using your [API Key and User Agent.](http://api.discorddungeons.me/developers)
 ```ruby
-app = DDAPI::app.new('api-key', 'user-agent')
+app = DDAPI::App.new('api-key', 'user-agent')
 ```
 You can search for users, items, guild items and guilds.
 
