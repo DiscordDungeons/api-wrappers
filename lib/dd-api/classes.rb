@@ -1,7 +1,6 @@
 require 'json'
 require 'htmlentities'
 
-require 'dd-api/api'
 require 'dd-api/init'
 
 # Objects essential to DRPG

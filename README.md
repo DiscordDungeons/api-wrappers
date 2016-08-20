@@ -5,24 +5,24 @@
 -----
 ### A wrapper gem to the [Discord Dungeons API](http://api.discorddungeons.me/docs/)
 # ToDo
-[ ] Search
- - [ ] User
- - [ ] Item
- - [ ] Guild Item
- - [ ] Guild
-[ ] ID parsing
- - [x] User
- - [ ] Item
- - [ ] Guild Item
- - [x] Guild
-[ ] All
- - [ ] Users
- - [ ] Items
- - [ ] Guild Items
- - [x] Guilds
-[ ] Misc.
- - [ ] Top __ users in ___
- - [ ] Crafts
+ - [ ] Search
+   - [ ] User
+   - [ ] Item
+   - [ ] Guild Item
+   - [ ] Guild
+ - [ ] ID parsing
+   - [x] User
+   - [ ] Item
+   - [ ] Guild Item
+   - [x] Guild
+ - [ ] All
+   - [ ] Users
+   - [ ] Items
+   - [ ] Guild Items
+   - [x] Guilds
+ - [ ] Misc.
+   - [ ] Top __ users in ___
+   - [ ] Crafts
 To start, make a new module using your [API Key and User Agent.](http://api.discorddungeons.me/developers)
 ```ruby
 app = DDAPI::app.new('api-key', 'user-agent')
