@@ -61,6 +61,48 @@ const guilds = {
 	},
 	searchByName: function(name, cb){
 		reqHandle("/search/guild/"+name, cb);
+	},
+	items: {
+		getById: function(id, cb){
+			reqHandle("/gitem/"+id, cb);
+		},
+		getAll: function(cb){
+			reqHandle("/all/gitems", cb);
+		},
+		searchByName: function(name, cb){
+			reqHandle("/search/gitem/"+name, cb);
+		}
+	}
+};
+
+const items = {
+	getAll: function(cb){
+		reqHandle("/all/items", cb);
+	},
+	getById: function(id, cb){
+		reqHandle("/item/"+id, cb);
+	},
+	searchByName: function(name, cb){
+		reqHandle("/search/item/"+name, cb);
+	}
+};
+
+const users = {
+	getById: function(id, cb){
+		reqHandle("/user/"+id, cb);
+	},
+	getAll: function(cb){
+		reqHandle("/all/users", cb);
+	},
+	getLead: function(field, amt, cb){
+		if(typeof amt === "function"){
+			reqHandle('/lead/'+field, amt);
+		}else{
+			reqHandle('/lead/'+field+"/"+amt, cb);
+		}
+	},
+	searchByName: function(name, cb){
+		reqHandle("/search/user/"+name, cb);
 	}
 };
 
@@ -70,7 +112,12 @@ const DDApi = {
 		this.API_AGENT = API_AGENT;
 	},
 	crafts: crafts,
-	guilds: guilds
+	guilds: guilds,
+	items: items,
+	users: users,
+	getBotStats: function(cb){
+		reqHandle("/stats/", cb);
+	}
 };
 
 module.exports = DDApi;
