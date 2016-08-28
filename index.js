@@ -52,12 +52,25 @@ const crafts = {
 	}
 };
 
+const guilds = {
+	getAll: function(cb){
+		reqHandle("/all/guilds", cb);
+	},
+	getById: function(id,cb){
+		reqHandle("/guild/"+id, cb);
+	},
+	searchByName: function(name, cb){
+		reqHandle("/search/guild/"+name, cb);
+	}
+};
+
 const DDApi = {
 	init: function(API_KEY, API_AGENT){
 		this.API_KEY = API_KEY;
 		this.API_AGENT = API_AGENT;
 	},
-	crafts: crafts
+	crafts: crafts,
+	guilds: guilds
 };
 
 module.exports = DDApi;
