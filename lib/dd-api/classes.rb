@@ -131,6 +131,9 @@ module DDAPI
     # @return [String] The icon of the guild.
     attr_accessor :icon
 
+    # @return [String] The icon image URL to the guild's icon.
+    attr_accessor :image
+
     # @return [Array<String>] Array of icons the guild has bought.
     attr_accessor :icons
 
@@ -142,7 +145,8 @@ module DDAPI
 
     def initialize(data, app)
       @data = data
-      gdata = data['guild']
+      # gdata = data['guild']
+      gdata = data
       @name = data['name']
       @open = data['open']
       @level = gdata['level']
@@ -151,6 +155,7 @@ module DDAPI
       @kills = @data['slain']
       @deaths = @data['deaths']
       @icon = HTMLEntities.new.decode(gdata['icon'])
+      @icon_url = API.guild_icon_url(gdata['icon'])
       @icons = gdata['icons'].map {|icon| HTMLEntities.new.decode(icon) }
       @id = data['id']
       @members = gdata['members']
@@ -188,7 +193,7 @@ module DDAPI
     attr_accessor :description
     alias_method :desc, :description
 
-    # @return [String] The image URL to the item.
+    # @return [String] The image URL to the item. `nil` if there is no image.
     attr_accessor :image
 
     # @return [Integer] The level of the item.
@@ -212,7 +217,7 @@ module DDAPI
       @level = data['level']
       @description = data['desc']
       @type = data['type']
-      @image = API.image_url(data['image'])
+      @image = data['image'].nil? ? nil : API.image_url(data['image'])
       #@id = data['id']
       @prefix = data['prefix']
       @prefix = data['plural']
@@ -246,7 +251,7 @@ module DDAPI
     attr_accessor :description
     alias_method :desc, :description
 
-    # @return [String] The image URL to the item.
+    # @return [String, nil] The image URL to the item. `nil` if there is no image.
     attr_accessor :image
 
     # @return [Integer] The level of the item.
@@ -260,7 +265,7 @@ module DDAPI
       @name = data['name']
       @level = data['level']
       @description = data['desc']
-      @image = API.image_url(data['image'])
+      @image = data['image'].nil? ? nil : API.image_url(data['image'])
       #@id = data['id']
       @prefix = data['prefix']
       @prefix = data['plural']
