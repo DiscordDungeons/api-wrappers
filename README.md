@@ -1,8 +1,8 @@
 [![Gem Version](https://img.shields.io/gem/v/dd-api.svg?style=flat-square)]()
 [![Gem Downloads](https://img.shields.io/gem/dt/dd-api.svg?style=flat-square)]()
 [![Inline Docs](http://inch-ci.org/github/DiscordDungeons/api.svg?branch=ruby&style=flat-square)]() 
-[![Travis](https://img.shields.io/travis/DiscordDungeons/api-rb/master.svg?style=flat-square)]()
-[![Join Discord](https://img.shields.io/badge/discord-join-7289DA.svg?style=flat-square)](http://discord.discorddungeons.me)
+[![Travis](https://img.shields.io/travis/DiscordDungeons/api-rb/master.svg?style=flat-square)]()<br />
+[![Join Discord](https://discordapp.com/api/guilds/172382467385196544/widget.png?style=banner2)](http://discord.discorddungeons.me)
 [![Read License](https://img.shields.io/badge/read-license-red.svg?style=flat-square)]()
 -----
 ### A wrapper gem to the [Discord Dungeons API](http://api.discorddungeons.me/docs/)
