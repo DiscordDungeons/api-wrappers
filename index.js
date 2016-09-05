@@ -19,6 +19,7 @@
 const http = require("http");
 const bases = {
 	URL: "api.discorddungeons.me"
+	RES: "res.discorddungeons.me/images"
 };
 
 const reqHandle = function(path, cb){
