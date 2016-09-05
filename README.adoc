@@ -14,8 +14,8 @@ a|link:https://github.com/DiscordDungeons/api/tree/ruby[Ruby]
 a|image::/resources/b1.png[Working On]
 a|link:https://github.com/DiscordDungeons/api/tree/php[PHP]
 
-a|image::/resources/b0.png[Planned]
-|Node
+a|image::/resources/b1.png[Planned]
+a|link:https://github.com/DiscordDungeons/api/tree/js[Node/JS]
 
 a|image::/resources/b0.png[Planned]
 |Python
